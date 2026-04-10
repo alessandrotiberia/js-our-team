@@ -36,3 +36,26 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+/*Dato un array di oggetti rappresentante un team di un’azienda,
+creare una pagina dedicata  in cui mostrare una card per ciascun componente. */
+
+const teamContainer = document.getElementById("team-container");
+
+
+for (let i = 0; i < teamMembers.length; i++) {
+  const member = teamMembers[i];
+
+// Creiamo la struttura HTML della card usando i template literal (gli apici inversi ` )
+  const cardHTML = `
+    <div class="card">
+      <img src="${member.img}" alt="Foto di ${member.name}">
+      <h3>${member.name}</h3>
+      <p class="role">${member.role}</p>
+      <p class="email">${member.email}</p>
+    </div>
+  `;
+
+  //Aggiungiamo la card appena creata dentro il contenitore
+  teamContainer.innerHTML += cardHTML;
+}
