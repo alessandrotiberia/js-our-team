@@ -1,12 +1,57 @@
 * {
-    border: 0;
-    padding: 0;
-    box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 body {
   font-family: Arial, sans-serif;
   background-color: white;
   text-align: center;
   margin: 0;
   padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.team-container {
+  display: grid;
+  /* Crea esattamente 3 colonne della stessa larghezza */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: black;
+  color: white;
+  /* Testo bianco per contrasto */
+  border-radius: 10px;
+  padding: 15px;
+
+  /* Requisito 2: Foto a sinistra, testo a destra */
+  display: flex;
+  align-items: center;
+  /* Allinea verticalmente al centro */
+  gap: 15px;
+  /* Spazio tra la foto e il testo */
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Quando lo schermo è largo al massimo 768px (es. smartphone) */
+@media (max-width: 768px) {
+  .team-container {
+    /* Requisito 3: Passa da 3 colonne a 1 colonna singola */
+    grid-template-columns: 1fr; 
+  }
 }
